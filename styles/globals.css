@@ -1,0 +1,100 @@
+*{
+  font-family: 'Cascadia Code', 'Roboto';
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeIn {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+
+
+.circular-btn {
+  border-radius: 30px;
+}
+
+.circular-btn:hover {
+  background-color: #2f3136;
+}
+
+
+.summary-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Desaparecer scroll */
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.input{
+  border: 1px solid black;
+  border-radius: 20px;
+  padding-left: 5px;
+  outline: none;
+  height: 60%;
+  width: 50%;
+}
+
+
+/* CARDPRODUCT */
+.cardProduct{
+  opacity: 0.9;
+}
+.cardProduct:hover{
+  opacity: 1;
+}
+
+/* TEXTO CENTRADO DEL CARDPRODUCT (Typography)*/
+
+.logo{
+  background: #1E1E1E;
+  color: rgb(206, 206, 206);
+  padding: 5px;
+  border-radius: 5px;
+}
+/* CARDPRODUCT */
+
+.activate{
+  color: #2f3136;
+}
+.item{
+  color: #2f3136;
+}
+.listSide:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #2f3136;
+}
+.listSide:hover .listIcon {
+  color: #2f3136 !important;
+}
+
+
+/* CONTEDOR DE PRODUCTO */
+.itemCounter {
+  width: max-content;
+  border: 2px solid #464953;
+  border-radius: 30px;
+}
+/* @media screen and (max-width: 768px) {
+  .itemCounter {
+    width: 100%;
+  }
+} */
+/* CONTEDOR DE PRODUCTO */
