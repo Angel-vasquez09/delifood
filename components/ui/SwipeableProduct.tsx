@@ -56,14 +56,13 @@ export const SwipeableProduct: React.FC<Props> = ({ window, product }) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Root>
-            {/* <CssBaseline /> */}
+        <Root sx={{ height: '70%'}}>
+            {/* <CssBaseline />  height: `calc(70% - ${drawerBleeding}px) !important`*/}
             <Global
                 styles={{
                     '.MuiDrawer-root > .MuiPaper-root': {
-                        height: `calc(70% - ${drawerBleeding}px)`,
                         overflow: 'visible'
-                    },
+                    }
                 }}
             />
             <SwipeableDrawer
