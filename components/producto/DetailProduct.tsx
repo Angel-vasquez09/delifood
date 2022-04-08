@@ -56,7 +56,7 @@ export const DetailProduct: FC<Props> = ({ product }) => {
 
             <Box sx={{ my: 6, display: { xs: 'flex', sm: 'none' }, justifyContent: 'center' }}>
                 <ItemCounter
-                    mediaQuery={true}
+                    queryCart={false}
                     currentValue={auxCartProduct.quantity}
                     maxValue={3}
                     updateQuantity={onUpdateQueantity}
