@@ -27,9 +27,9 @@ const CartPage = () => {
     }
 
 	return (
-		<FoodLayout title="Carrito 3" pageDescripcion="Carrito de la tienda" category={false}>
-            <Typography variant="h1" component="h1">Carrito</Typography>
-            <Grid container>
+		<FoodLayout title="Carrito" pageDescripcion="Mi carrito de compras" category={false}>
+            <Typography variant="h1" component="h1">Cart</Typography>
+            <Grid container sx={{ mt: 3 }}>
                 <Grid item xs={12} sm={7}>
                     {/* Lista de productos */}
                     <CartList editable />

@@ -6,11 +6,11 @@ import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material' ;
 interface Props{
     currentValue  : number;
     maxValue      : number;
-    mediaQuery?   : boolean;
+    queryCart?    : boolean;
     updateQuantity: (newValue: number) => void;
 }
 
-export const ItemCounter: FC<Props> = ({ currentValue, maxValue, updateQuantity, mediaQuery = false }) => {
+export const ItemCounter: FC<Props> = ({ currentValue, maxValue, updateQuantity, queryCart = false }) => {
 
     const aumValue = () => {
         if(currentValue === maxValue){
@@ -36,7 +36,7 @@ export const ItemCounter: FC<Props> = ({ currentValue, maxValue, updateQuantity,
                 borderRadius: '30px',
                 border: '2px solid #464953',
                 justifyContent: { xs: 'space-between', sm: 'center' },
-                padding: { xs: '6px', sm: '0' },
+                padding: { xs: `${queryCart ? '0px': '6px'}`, sm: '0' },
             }}
         >
             <IconButton
@@ -45,14 +45,14 @@ export const ItemCounter: FC<Props> = ({ currentValue, maxValue, updateQuantity,
             >
                 <Typography
                     variant="h5"
-                    sx={{ width: 40, textAlign: 'center', fontSize: { xs: 30, md: 20} }}>-</Typography>
+                    sx={{ width: 40, textAlign: 'center', fontSize: { xs: queryCart ? 15 : 30, md: 20} }}>-</Typography>
             </IconButton>
-            <Typography variant="h5" sx={{ width: 40, textAlign: 'center', fontSize: { xs: 20, md: 20} }}>{ currentValue }</Typography>
+            <Typography variant="h5" sx={{ width: 40, textAlign: 'center', fontSize: { xs: queryCart ? 13 : 20, md: 20} }}>{ currentValue }</Typography>
             <IconButton
                 sx={{ p: 0}}
                 onClick={ aumValue }
             >
-                <Typography variant="h5" sx={{ width: 40, textAlign: 'center', fontSize: { xs: 30, md: 20} }}>+</Typography>
+                <Typography variant="h5" sx={{ width: 40, textAlign: 'center', fontSize: { xs: queryCart ? 15 : 30, md: 20} }}>+</Typography>
             </IconButton>
         </Box>
     )

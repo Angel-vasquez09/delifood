@@ -4,6 +4,7 @@ import { CardActionArea, CardMedia, Grid, Typography, Box, Link,Button, Card  } 
 import { ItemCounter } from '../ui'
 import { CartContext } from 'context';
 import { ICartProduct, IOrderItem } from 'interfaces';
+import { useRouter } from 'next/router';
 
 interface Props{
     editable: boolean,
@@ -11,6 +12,8 @@ interface Props{
 }
 
 export const CartList: FC<Props> = ({ editable, product }) => {
+
+    const { asPath } = useRouter();
 
     const { cart, updateCartQuantity, deleteProductCart  } = useContext(CartContext);
 
@@ -29,7 +32,7 @@ export const CartList: FC<Props> = ({ editable, product }) => {
 		<Box sx={{ p: { sm: 1 } }}>
 			{
                 productToShow.map(product => (
-                    <Card key={product.slug}  sx={{ display: 'flex', alignItems: 'center', mb: 2, height: {xs: '80px', lg: '145px'} }}>
+                    <Card key={product.slug}  sx={{ display: 'flex', alignItems: 'center', mb: 2, height: {xs: 'auto', lg: '145px'} }}>
                         <Grid spacing={1} container>
                             <Grid item xs={4}>
                                 <NextLink href={`/products/${product.slug}`} passHref>
@@ -51,6 +54,7 @@ export const CartList: FC<Props> = ({ editable, product }) => {
                                     {
                                         editable
                                         ? <ItemCounter
+                                            queryCart={asPath === '/cart' ? true : false}
                                             currentValue={product.quantity}
                                             maxValue={ 10 }
                                             updateQuantity={ (value: number) => updateQuantityCartAndCookie(product as ICartProduct,value) } />
