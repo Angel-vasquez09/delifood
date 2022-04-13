@@ -84,7 +84,7 @@ const ProductPage: NextPage<Props> = ({ product }) => {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+/* export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
     const { slug = '' } = params as { slug: string };
     const product = await dbProducts.getProductBySlug( slug );
@@ -104,9 +104,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
             product
         }
     }
-}
+} */
 
-/* export const getStaticPaths: GetStaticPaths = async (ctx) => {
+export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
     const productSlugs = await dbProducts.getAllProductSlugs();
 
@@ -140,7 +140,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         revalidate: 86400 // 1 day
     }
 }
- */
+
 
 
 // Estilos de un chip

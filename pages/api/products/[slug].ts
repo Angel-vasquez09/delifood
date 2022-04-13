@@ -34,7 +34,7 @@ const getProductBySlug = async (req: NextApiRequest, res: NextApiResponse<Data>)
      await db.disconnect()
 
      if (!product) {
-          return res.status(404).json({ message: "No existe el producto" })
+          return res.status(404).json({ message: "No existe el productos" })
      }
 
      return res.json(product);
